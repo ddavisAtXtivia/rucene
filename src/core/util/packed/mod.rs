@@ -63,6 +63,8 @@ mod elias_fano_decoder;
 
 pub use self::elias_fano_decoder::*;
 
+#[cfg_attr(any(target_arch = "x86", target_arch = "x86_64"), path = "packed_simd_x86_64.rs")]
+#[cfg_attr(any(target_arch = "arm", target_arch = "aarch64"), path = "packed_simd_arm.rs")]
 mod packed_simd;
 
 pub use self::packed_simd::*;

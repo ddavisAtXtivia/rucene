@@ -25,7 +25,6 @@
 #![feature(fn_traits)]
 #![feature(maybe_uninit_ref)]
 #![feature(maybe_uninit_extra)]
-#![feature(in_band_lifetimes)]
 #![feature(vec_into_raw_parts)]
 #![feature(core_intrinsics)]
 #![feature(stmt_expr_attributes)]
@@ -48,7 +47,6 @@ extern crate byteorder;
 extern crate bytes;
 extern crate crc;
 extern crate crossbeam;
-extern crate fasthash;
 extern crate flate2;
 extern crate memmap;
 extern crate num_cpus;

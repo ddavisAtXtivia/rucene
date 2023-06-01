@@ -392,9 +392,17 @@ impl SIMDPacker for SIMD128Packer {
     }
 
     #[inline(always)]
+    #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     fn is_support() -> bool {
         std::is_x86_feature_detected!("sse3")
     }
+
+    #[inline(always)]
+    #[cfg(any(target_arch = "arm", target_arch = "aarch64"))]
+    fn is_support() -> bool {
+        std::is_x86_feature_detected!("sse3")
+    }
+
 }
 
 #[cfg(test)]
